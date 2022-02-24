@@ -34,6 +34,11 @@
     debug "^3.1.0"
     lodash.once "^4.1.1"
 
+"@faker-js/faker@^6.0.0-alpha.7":
+  version "6.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-6.0.0-alpha.7.tgz#d4383b10c5cd35ec02fafd1bc472b2f85c306cf5"
+  integrity sha512-T2nYE8+EfzfkRMLMSm7UvgC7fZ2KkKEyCMeyPVS0q2cuvENbt1SjWyu0bOJ0JqBbTs1g+gYMWMFMXspWlzNVmQ==
+
 "@types/node@*":
   version "17.0.21"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.21.tgz#864b987c0c68d07b4345845c3e63b75edd143644"
