@@ -24,14 +24,9 @@ describe('green tests', () => {
         // validate code
     });
 
-    it('should login a user', () => {
+    it('should login a user and create a business', () => {
         // type on inputs
-        cy.get('#email')
-            .type('simon.villaverde@arzion.com')
-            .should('have.value', 'simon.villaverde@arzion.com');
-        cy.get('#password').type('test').should('have.value', 'test');
-
-        cy.get('#login_button').click();
+        cy.login();
 
         cy.location().should((location) => {
             expect(location.pathname).to.eq('/business');
@@ -50,5 +45,28 @@ describe('green tests', () => {
         cy.location().should((location) => {
             expect(location.pathname).to.eq('/business/payment');
         });
+
+        cy.visit('http://localhost:3000/business/update');
+
+        cy.location().should((location) => {
+            expect(location.pathname).to.eq('/business/update');
+        });
+    });
+
+    it('should login a user and update a business', () => {
+        // type on inputs
+        cy.login();
+
+        cy.location().should((location) => {
+            expect(location.pathname).to.eq('/business');
+        });
+
+        cy.get('#update_button-0').click();
+
+        cy.location().should((location) => {
+            expect(location.pathname).to.eq('/business/update');
+        });
+
+        cy.get('#business_update_button').click();
     });
 });

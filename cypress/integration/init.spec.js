@@ -1,10 +1,13 @@
-describe('Init Random data Test', () => {
-    it('Prepare initial user data', () => {
+// Load and instantiate Chance
+var chance = require('chance').Chance();
+
+describe('generate fake data', () => {
+    it('should generate fake user data', () => {
         const user = {
-            username: cy.faker.name.firstName(),
-            email: cy.faker.internet.email(),
-            password: cy.faker.internet.password(),
-            phone: '12345678',
+            username: chance.name(),
+            email: chance.email(),
+            password: chance.string(),
+            phone: chance.phone(),
         };
         cy.writeFile('cypress/fixtures/user.json', user);
     });

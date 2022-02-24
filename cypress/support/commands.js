@@ -1,9 +1,12 @@
 Cypress.Commands.add('register', () => {
-    cy.get('#name').type('iglobal').should('have.value', 'iglobal');
-    cy.get('#email').type('iglobal111@iglobal.com').should('have.value', 'iglobal111@iglobal.com');
-    cy.get('#password').type('iglobal123').should('have.value', 'iglobal123');
-    cy.get('#password2').type('iglobal123').should('have.value', 'iglobal123');
-    cy.get('#phone').type('123456789').should('have.value', '+54 (12) 3456789');
+    cy.fixture('user').then((user) => {
+        console.log('user', user);
+        cy.get('#name').type(user.username).should('have.value', user.username);
+        cy.get('#email').type(user.email).should('have.value', user.email);
+        cy.get('#password').type(user.password).should('have.value', user.password);
+        cy.get('#password2').type(user.password).should('have.value', user.password);
+        cy.get('#phone').type(user.phone);
+    });
 });
 
 Cypress.Commands.add('login', () => {
@@ -11,6 +14,7 @@ Cypress.Commands.add('login', () => {
         .type('simon.villaverde@arzion.com')
         .should('have.value', 'simon.villaverde@arzion.com');
     cy.get('#password').type('test').should('have.value', 'test');
+    cy.get('#login_button').click();
 });
 
 Cypress.Commands.add('registerBusiness', () => {
