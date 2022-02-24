@@ -1,8 +1,26 @@
 {
-    "dependencies": {
-        "cypress": "^9.5.0"
+    "name": "ig-manager-e2e",
+    "version": "1.0.0",
+    "description": "IGlobal single property test",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "cy:open": "cypress open",
+        "cy:run": "cypress run",
+        "lint": "eslint cypress/**/*.js"
     },
+    "author": "Arzion",
+    "license": "ISC",
     "devDependencies": {
-        "@faker-js/faker": "^6.0.0-alpha.7"
+        "@faker-js/faker": "^6.0.0-alpha.7",
+        "cypress": "9.5.0",
+        "cypress-dark": "1.8.3",
+        "eslint": "8.9.0",
+        "eslint-config-airbnb-base": "15.0.0",
+        "eslint-plugin-import": "2.25.4",
+        "faker": "6.6.6",
+        "ts-loader": "9.2.6",
+        "typescript": "4.5.5",
+        "webpack": "5.69.1"
     }
 }
