@@ -57,7 +57,7 @@ Cypress.Commands.add('loginFakeCredentials', () => {
     cy.get('#login_button').click();
 });
 
-Cypress.Commands.add('logininactiveAccount', () => {
+Cypress.Commands.add('loginInactiveAccount', () => {
     cy.get('#email').type(inactiveAccount.email).should('have.value', inactiveAccount.email);
     cy.get('#password')
         .type(inactiveAccount.password)

@@ -10,7 +10,7 @@ describe('login errors', () => {
     });
 
     it('should throw inactive account error', () => {
-        cy.loginInactiveUser();
+        cy.loginInactiveAccount();
 
         cy.get('#inactive_account').should('be.visible');
     });
