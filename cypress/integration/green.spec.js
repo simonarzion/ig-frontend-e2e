@@ -15,11 +15,7 @@ describe('green tests', () => {
             expect(location.pathname).to.eq('/auth/signup');
         });
 
-        // type on inputs
         cy.register();
-
-        // submit form
-        cy.get('#signup_button').click();
 
         // validate code
     });

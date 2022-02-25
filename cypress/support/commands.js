@@ -1,19 +1,67 @@
+const inactiveAccount = {
+    email: 'tesoxo4262@sueshaw.com',
+    password: 'tesoxo4262@sueshaw.com',
+};
+
+const existingAccount = {
+    email: 'simon.villaverde@arzion.com',
+    password: 'test',
+};
+
 Cypress.Commands.add('register', () => {
     cy.fixture('user').then((user) => {
-        console.log('user', user);
         cy.get('#name').type(user.username).should('have.value', user.username);
         cy.get('#email').type(user.email).should('have.value', user.email);
         cy.get('#password').type(user.password).should('have.value', user.password);
         cy.get('#password2').type(user.password).should('have.value', user.password);
         cy.get('#phone').type(user.phone);
     });
+    cy.get('#signup_button').click();
+});
+
+Cypress.Commands.add('registerExistingAccount', () => {
+    cy.fixture('user').then((user) => {
+        cy.get('#name').type(user.username).should('have.value', user.username);
+        cy.get('#email').type(existingAccount.email).should('have.value', existingAccount.email);
+        cy.get('#password').type(user.password).should('have.value', user.password);
+        cy.get('#password2').type(user.password).should('have.value', user.password);
+        cy.get('#phone').type(user.phone);
+    });
+    cy.get('#signup_button').click();
+});
+
+Cypress.Commands.add('registerInactiveAccount', () => {
+    cy.fixture('user').then((user) => {
+        cy.get('#name').type(user.username).should('have.value', user.username);
+        cy.get('#email').type(inactiveAccount.email).should('have.value', inactiveAccount.email);
+        cy.get('#password').type(user.password).should('have.value', user.password);
+        cy.get('#password2').type(user.password).should('have.value', user.password);
+        cy.get('#phone').type(user.phone);
+    });
+    cy.get('#signup_button').click();
 });
 
 Cypress.Commands.add('login', () => {
-    cy.get('#email')
-        .type('simon.villaverde@arzion.com')
-        .should('have.value', 'simon.villaverde@arzion.com');
-    cy.get('#password').type('test').should('have.value', 'test');
+    cy.get('#email').type(existingAccount.email).should('have.value', existingAccount.email);
+    cy.get('#password')
+        .type(existingAccount.password)
+        .should('have.value', existingAccount.password);
+    cy.get('#login_button').click();
+});
+
+Cypress.Commands.add('loginFakeCredentials', () => {
+    cy.fixture('userInvalidCredentials').then((user) => {
+        cy.get('#email').type(user.email).should('have.value', user.email);
+        cy.get('#password').type(user.password).should('have.value', user.password);
+    });
+    cy.get('#login_button').click();
+});
+
+Cypress.Commands.add('logininactiveAccount', () => {
+    cy.get('#email').type(inactiveAccount.email).should('have.value', inactiveAccount.email);
+    cy.get('#password')
+        .type(inactiveAccount.password)
+        .should('have.value', inactiveAccount.password);
     cy.get('#login_button').click();
 });
 
