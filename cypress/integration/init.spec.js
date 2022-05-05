@@ -13,9 +13,7 @@ describe("initial tests", () => {
     cy.get("#login").click();
 
     cy.location().should((location) => {
-      expect(location.toString()).to.eq(
-        "https://www.iglobal.co/united-states/login"
-      );
+      expect(location.toString()).to.eq("https://www.iglobal.co/auth/login");
     });
   });
 
