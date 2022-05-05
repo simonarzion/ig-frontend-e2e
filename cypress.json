@@ -1,6 +1,7 @@
 {
-    "baseUrl": "https://localhost:3000",
-    "viewportWidth": 1100,
-    "viewportHeight": 722,  
-    "defaultCommandTimeout": 6100 
+  "baseUrl": "https://localhost:5000",
+  "viewportWidth": 1100,
+  "viewportHeight": 722,
+  "defaultCommandTimeout": 6100,
+  "chromeWebSecurity": false
 }

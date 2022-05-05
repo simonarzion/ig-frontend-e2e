@@ -1,27 +1,24 @@
 {
-    "name": "ig-manager-e2e",
-    "version": "1.0.0",
-    "description": "IGlobal single property test",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "cy:open": "cypress open",
-        "cy:run": "cypress run",
-        "lint": "eslint cypress/**/*.js"
-    },
-    "author": "Arzion",
-    "license": "ISC",
-    "devDependencies": {
-        "cypress": "9.5.0",
-        "cypress-dark": "1.8.3",
-        "eslint": "8.9.0",
-        "eslint-config-airbnb-base": "15.0.0",
-        "eslint-plugin-import": "2.25.4",
-        "ts-loader": "9.2.6",
-        "typescript": "4.5.5",
-        "webpack": "5.69.1"
-    },
-    "dependencies": {
-        "chance": "^1.1.8"
-    }
+  "name": "ig-frontend-e2e",
+  "version": "1.0.0",
+  "description": "IGlobal single property test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "lint": "eslint cypress/**/*.js"
+  },
+  "author": "Arzion",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "9.5.0",
+    "cypress-dark": "1.8.3",
+    "eslint": "8.9.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-plugin-import": "2.25.4",
+    "ts-loader": "9.2.6",
+    "typescript": "4.5.5",
+    "webpack": "5.69.1"
+  }
 }
