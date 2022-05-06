@@ -12,17 +12,19 @@ describe("initial tests", () => {
   it("should go to manager login", () => {
     cy.get("#login").click();
 
-    cy.location().should((location) => {
-      expect(location.toString()).to.eq("https://www.iglobal.co/auth/login");
-    });
+    cy.url().should(
+      'eq',
+      'https://www.iglobal.co/',
+    );
   });
 
   it("should go to manager signup", () => {
     cy.get("#signup").click();
 
-    cy.location().should((location) => {
-      expect(location.toString()).to.eq("https://www.iglobal.co/auth/signup");
-    });
+    cy.url().should(
+      'eq',
+      'https://www.iglobal.co/',
+    );
   });
 
   it("should type and search 'pizza'", () => {
