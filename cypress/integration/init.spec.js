@@ -12,37 +12,12 @@ describe("initial tests", () => {
   it("should go to manager login", () => {
     cy.get("#login").click();
 
-    cy.url().should(
-      'eq',
-      'https://www.iglobal.co/',
-    );
+    cy.url().should("eq", "http://localhost:3000/auth/login");
   });
 
   it("should go to manager signup", () => {
     cy.get("#signup").click();
 
-    cy.url().should(
-      'eq',
-      'https://www.iglobal.co/',
-    );
-  });
-
-  it("should type and search 'pizza'", () => {
-    cy.get("#home-hero-search-input").should("be.visible").type("pizza");
-    cy.get("#home-hero-search-button").click();
-
-    cy.location().should((location) => {
-      expect(location.pathname).to.eq("/united-states/search/pizza");
-    });
-  });
-
-  it("should change the region to 'Argentina'", () => {
-    cy.get(".custom-select-trigger").click();
-
-    cy.get("#argentina").click();
-
-    cy.location().should((location) => {
-      expect(location.search).to.eq("?country_iso=AR");
-    });
+    cy.url().should("eq", "http://localhost:3000/auth/signup");
   });
 });
