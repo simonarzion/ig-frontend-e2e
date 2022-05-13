@@ -1,23 +1,27 @@
 Cypress.on("uncaught:exception", (err, runnable) => {
   return false;
 });
-describe("initial tests", () => {
+describe("Initial tests", () => {
   beforeEach(() => {
     cy.visit("http://localhost:5000/");
   });
-  it("should visit home", () => {
-    cy.get("#home-hero-tagline").should("be.visible");
+  it("Should visit home", () => {
+    cy.get("#home-hero-search-input").should("be.visible");
   });
 
-  it("should go to manager login", () => {
+  it("Should go to manager login", () => {
     cy.get("#login").click();
-
-    cy.url().should("eq", "http://localhost:3000/auth/login");
+    cy.url().should("include", "/auth/login");
   });
 
-  it("should go to manager signup", () => {
+  it("Should go to manager signup", () => {
     cy.get("#signup").click();
+    cy.url().should("include", "/auth/signup");
+  });
 
-    cy.url().should("eq", "http://localhost:3000/auth/signup");
+  it("Input search redirect correctly", () => {
+    cy.get("#home-hero-search-input")
+      .type("Pizza")
+      .should('have.value', 'Pizza');
   });
 });

@@ -12,13 +12,13 @@
   "author": "Arzion",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "9.5.0",
+    "cypress": "9.6.1",
     "cypress-dark": "1.8.3",
-    "eslint": "8.9.0",
+    "eslint": "8.15.0",
     "eslint-config-airbnb-base": "15.0.0",
-    "eslint-plugin-import": "2.25.4",
-    "ts-loader": "9.2.6",
-    "typescript": "4.5.5",
-    "webpack": "5.69.1"
+    "eslint-plugin-import": "2.26.0",
+    "ts-loader": "9.3.0",
+    "typescript": "4.6.4",
+    "webpack": "5.72.1"
   }
 }
